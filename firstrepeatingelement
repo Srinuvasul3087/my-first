@@ -1,0 +1,34 @@
+import java.util.*;
+public class Firstrepeatingelement
+{
+	public static void main(String[] args)
+	{
+	int[] arr={6,5,8,9,3,5,1};
+	int result=findfirstrepeatingelement(arr);
+	if(result==-1)
+	{
+		System.out.println("element not found");
+	} else {
+            System.out.println("element is found:"+result);
+	}
+}
+public static int findfirstrepeatingelement(int[] arr)
+{
+	HashSet<Integer>seen=new HashSet<>();
+	int firstrepeating=-1;
+	for(int i=0;i<arr.length-1;i++)
+	{
+		if(seen.contains(arr[i]))
+		{
+			firstrepeating=arr[i];
+		} else {
+			seen.add(arr[i]);
+		}
+	}
+    return firstrepeating;
+    }
+}
+
+		
+	
+		
